@@ -58,16 +58,12 @@ const contactInfo = [
     label: "Location",
     value: "Pakistan",
     href: null,
-              
-
-      
-
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    // value: "linkedin.com/in/ghulam-rasool",
-    href: "https://linkedin.com/in/ghulam-rasool1",
+    value: "linkedin.com/in/ghulam-rasool",
+    href: "https://linkedin.com/in/ghulam-rasool",
   },
   {
     icon: Github,
