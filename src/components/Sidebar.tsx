@@ -1,5 +1,5 @@
 import { Home, User, Briefcase, FolderOpen, Award, GraduationCap, Mail, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
 const navItems = [
@@ -14,6 +14,7 @@ const navItems = [
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("home");
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -22,6 +23,26 @@ export const Sidebar = () => {
       setIsOpen(false);
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[id]");
+      let current = activeSection;
+
+      sections.forEach((sec) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          current = sec.getAttribute("id") || "home";
+        }
+      });
+
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // run once on load
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -50,10 +71,20 @@ export const Sidebar = () => {
             <button
               key={item.label}
               onClick={() => scrollToSection(item.href)}
-              className="group relative p-3 rounded-xl hover:bg-accent/10 transition-all duration-300"
+              className={`group relative p-3 rounded-xl transition-all duration-300 ${
+                activeSection === item.href.replace("#", "")
+                  ? "bg-accent/20 text-primary"
+                  : "hover:bg-accent/10"
+              }`}
               aria-label={item.label}
             >
-              <item.icon className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" />
+              <item.icon
+                className={`h-6 w-6 transition-colors ${
+                  activeSection === item.href.replace("#", "")
+                    ? "text-primary"
+                    : "text-muted-foreground group-hover:text-primary"
+                }`}
+              />
               <span className="absolute left-full ml-4 px-3 py-1 bg-card border border-border rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
                 {item.label}
               </span>
