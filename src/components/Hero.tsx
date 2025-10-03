@@ -40,7 +40,10 @@ export const Hero = () => {
   }, [displayText, isDeleting, currentRole]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-8">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-4 md:px-8"
+    >
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center animate-fade-in">
         {/* Text Content */}
         <div className="space-y-6">
@@ -62,30 +65,35 @@ export const Hero = () => {
           </div>
 
           <p className="text-base text-muted-foreground leading-relaxed max-w-lg">
-            Building secure, scalable, and user-friendly web applications with expertise 
-            in PHP, Laravel, MySQL, and modern JavaScript frameworks.
+            Building secure, scalable, and user-friendly web applications with
+            expertise in PHP, Laravel, MySQL, and modern JavaScript frameworks.
           </p>
 
           <div className="pt-4">
-            <Button
-              size="lg"
-              className="gap-2 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8"
+            <a
+              href="/resume/Ghulam Rasool - Junior Software Developer Resume.pdf" // put your PDF file inside the "public" folder
+              download="resume/Ghulam Rasool - Junior Software Developer Resume.pdf"
             >
-              <Download className="h-5 w-5" />
-              Download CV
-            </Button>
+              <Button
+                size="lg"
+                className="gap-2 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8"
+              >
+                <Download className="h-5 w-5" />
+                Download CV
+              </Button>
+            </a>
           </div>
 
           <div className="flex gap-4 pt-2">
             <a
-              href="mailto:ghulamrasool@example.com"
+              href="mailto:ghulamrasoolcs36@gmail.com"
               className="p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/ghulam-rasool"
+              href="https://linkedin.com/in/ghulamrasool1"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300"
@@ -94,7 +102,7 @@ export const Hero = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="https://github.com/ghulamrasool"
+              href="https://github.com/ghulamrasoolcs"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-lg border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300"
@@ -111,12 +119,12 @@ export const Hero = () => {
             {/* Decorative corner borders */}
             <div className="absolute -top-4 -right-4 w-20 h-20 border-t-4 border-r-4 border-primary rounded-tr-2xl z-10" />
             <div className="absolute -bottom-4 -left-4 w-20 h-20 border-b-4 border-l-4 border-primary rounded-bl-2xl z-10" />
-            
+
             {/* Image Card */}
             <div className="relative w-72 h-96 md:w-80 md:h-[28rem] rounded-2xl overflow-hidden bg-card border border-border shadow-2xl">
-              <img 
-                src={profileImage} 
-                alt="Ghulam Rasool - Junior Software Developer" 
+              <img
+                src={profileImage}
+                alt="Ghulam Rasool - Junior Software Developer"
                 className="w-full h-full object-cover"
               />
             </div>

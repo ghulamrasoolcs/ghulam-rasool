@@ -44,14 +44,14 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "ghulamrasool@example.com",
-    href: "mailto:ghulamrasool@example.com",
+    value: "ghulamrasoolcs36@gmail.com",
+    href: "mailto:ghulamrasoolcs36@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+92 XXX XXXXXXX",
-    href: "tel:+92XXXXXXXXX",
+    value: "+92 348 0327686",
+    href: "tel:+923480327686",
   },
   {
     icon: MapPin,
@@ -65,15 +65,15 @@ const contactInfo = [
 
   {
     icon: Linkedin,
-    // label: "LinkedIn",
-    value: "linkedin.com/in/ghulam-rasool",
-    href: "https://linkedin.com/in/ghulam-rasool",
+    label: "LinkedIn",
+    value: "linkedin.com/in/ghulamrasool1",
+    href: "https://linkedin.com/in/ghulamrasool1",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/ghulamrasool",
-    href: "https://github.com/ghulamrasool",
+    value: "github.com/ghulamrasoolcs",
+    href: "https://github.com/ghulamrasoolcs",
   },
 ];
 
@@ -240,8 +240,7 @@ export const Contact = () => {
         </div>
 
         <footer className="mt-20 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2024 Ghulam Rasool. All rights reserved.</p>
-          <p className="mt-2">Built with React, TypeScript & Tailwind CSS</p>
+          <p>© {new Date().getFullYear()} Ghulam Rasool. All rights reserved.</p>
         </footer>
       </div>
     </section>
