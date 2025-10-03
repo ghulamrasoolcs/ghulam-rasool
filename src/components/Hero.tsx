@@ -1,10 +1,11 @@
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "./ui/button";
+import profileImage from "@/assets/profile.jpg";
 
 export const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 md:px-8">
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center animate-fade-in">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12 items-center animate-fade-in">
         {/* Text Content */}
         <div className="space-y-6">
           <div className="space-y-2">
@@ -78,21 +79,19 @@ export const Hero = () => {
         </div>
 
         {/* Profile Image */}
-        <div className="relative flex justify-center">
-          <div className="relative w-80 h-80 md:w-96 md:h-96">
-            {/* Decorative corners */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-t-4 border-r-4 border-primary rounded-tr-3xl" />
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-4 border-l-4 border-primary rounded-bl-3xl" />
-            
-            {/* Profile container */}
-            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-primary/20 to-transparent p-1">
-              <div className="w-full h-full rounded-2xl bg-card flex items-center justify-center">
-                <div className="text-9xl font-bold text-primary/20">GR</div>
-              </div>
+        <div className="relative flex justify-center md:justify-start md:order-first">
+          <div className="relative w-64 h-64 md:w-80 md:h-80">
+            {/* Profile image */}
+            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+              <img 
+                src={profileImage} 
+                alt="Ghulam Rasool - Junior Software Developer" 
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            {/* Glow effect */}
-            <div className="absolute inset-0 rounded-2xl bg-primary/10 blur-3xl -z-10 animate-glow" />
+            {/* Soft glow effect */}
+            <div className="absolute inset-0 rounded-full bg-primary/20 blur-2xl -z-10 animate-glow" />
           </div>
         </div>
       </div>
