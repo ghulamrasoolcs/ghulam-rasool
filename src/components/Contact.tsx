@@ -94,8 +94,8 @@ export const Contact = () => {
   const onSubmit = async (data: ContactFormValues) => {
     try {
       const templateParams = {
-        from_name: data.fullName,
-        from_email: data.email,
+        fullName: data.fullName,
+        email: data.email,
         subject: data.subject,
         message: data.message,
       };
