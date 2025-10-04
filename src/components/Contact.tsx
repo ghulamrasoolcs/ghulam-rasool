@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 import {
   Form,
   FormControl,
@@ -90,15 +91,33 @@ export const Contact = () => {
     },
   });
 
-  const onSubmit = (data: ContactFormValues) => {
-    // Here you would typically send the data to your backend
-    console.log("Form data:", data);
-    
-    toast.success("Message sent successfully!", {
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    
-    form.reset();
+  const onSubmit = async (data: ContactFormValues) => {
+    try {
+      const templateParams = {
+        from_name: data.fullName,
+        from_email: data.email,
+        subject: data.subject,
+        message: data.message,
+      };
+
+      await emailjs.send(
+        'service_gi0lh2p',
+        'template_96rcn9v',
+        templateParams,
+        '7ALHT_V5712TM8RiH'
+      );
+
+      toast.success("Message sent successfully!", {
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      form.reset();
+    } catch (error) {
+      console.error("Email send error:", error);
+      toast.error("Failed to send message", {
+        description: "Please try again or contact me directly via email.",
+      });
+    }
   };
 
   return (
