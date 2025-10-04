@@ -71,15 +71,15 @@ export const Hero = () => {
 
           <div className="pt-4">
             <a
-              href="/resume/Ghulam Rasool - Junior Software Developer Resume.pdf" // put your PDF file inside the "public" folder
-              download="resume/Ghulam Rasool - Junior Software Developer Resume.pdf"
+              href="/resume/Ghulam Rasool - Junior Software Developer Resume.pdf"
+              download="Ghulam-Rasool-Resume.pdf"
             >
               <Button
                 size="lg"
                 className="gap-2 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8"
               >
                 <Download className="h-5 w-5" />
-                Download CV
+                Download Resume
               </Button>
             </a>
           </div>

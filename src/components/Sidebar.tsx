@@ -73,8 +73,8 @@ export const Sidebar = () => {
               onClick={() => scrollToSection(item.href)}
               className={`group relative p-3 rounded-xl transition-all duration-300 ${
                 activeSection === item.href.replace("#", "")
-                  ? "bg-accent/20 text-primary"
-                  : "hover:bg-accent/10"
+                  ? "bg-primary/10 text-primary border-l-2 border-primary"
+                  : "hover:bg-accent/10 text-muted-foreground"
               }`}
               aria-label={item.label}
             >
