@@ -72,7 +72,7 @@ export const Hero = () => {
           <div className="pt-4">
             <a
               href="/resume/Ghulam Rasool - Junior Software Developer Resume.pdf"
-              download="Ghulam-Rasool-Resume.pdf"
+              download="/resume/Ghulam Rasool - Junior Software Developer Resume.pdf"
             >
               <Button
                 size="lg"
